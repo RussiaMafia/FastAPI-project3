@@ -37,13 +37,13 @@
 
 ### 1. Клонирование репозитория
 
-bash
+```bash
 git clone https://github.com/RussiaMafia/url-shortener.git
 cd url-shortener
-bash
+```
 ### 2. Создание виртуального окружения
 
-bash
+```bash
 # Windows
 python -m venv venv
 .\venv\Scripts\activate
@@ -51,15 +51,15 @@ python -m venv venv
 # Linux/Mac
 python3 -m venv venv
 source venv/bin/activate
-bash
+```
 ### 3. Установка зависимостей
-bash
+```bash
 pip install -r requirements.txt
-bash
+```
 ### 4. Настройка переменных окружения
 
 Создайте файл .env в корне проекта:
-.env
+```.env
 # Database
 DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/url_shortener
 
@@ -76,20 +76,20 @@ BASE_URL=http://localhost:8000
 DEFAULT_LINK_EXPIRATION_DAYS=30
 SHORT_CODE_LENGTH=6
 CACHE_TTL=3600
-.env
+```
 ### 5. Запуск базы данных и Redis
-bash
+```bash
 # Используя Docker
 docker-compose up postgres redis -d
-bash
+```
 # Или установите PostgreSQL и Redis локально
 
 ### 6. Применение миграций
-bash
+```bash
 alembic upgrade head
-bash
+```
 ### 7. Запуск приложения
-bash
+```bash
 # Backend API
 uvicorn app.main:app --reload
 
@@ -97,7 +97,7 @@ uvicorn app.main:app --reload
 cd frontend
 python -m http.server 3000
 # или используйте Live Server в VS Code
-bash
+```
 ## Приложение доступно:
 API: http://localhost:8000
 Swagger документация: http://localhost:8000/docs
@@ -105,9 +105,9 @@ Frontend: http://localhost:3000/frontend/index.html
 
 ## 🐳 Docker Compose
 Для запуска всего стека одной командой:
-bash
+```bash
 docker-compose up --build
-bash
+```
 ## 📚 API Endpoints
 ### Authentication
 Метод       Endpoint        Описание
