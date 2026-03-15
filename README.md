@@ -109,21 +109,26 @@ Frontend: http://localhost:3000/frontend/index.html
 docker-compose up --build
 ```
 ## 📚 API Endpoints
+
 ### Authentication
-Метод       Endpoint        Описание
-POST        /api/auth/register      Регистрация нового пользователя
-POST        /api/auth/login     Вход и получение JWT токена
-GET     /api/auth/me        Информация о текущем пользователе
+
+| Метод | Endpoint | Описание | Требуется auth |
+|-------|----------|----------|----------------|
+| POST | `/api/auth/register` | Регистрация нового пользователя | ❌ Нет |
+| POST | `/api/auth/login` | Вход и получение JWT токена | ❌ Нет |
+| GET | `/api/auth/me` | Информация о текущем пользователе | ✅ Да |
 
 ### Links
-Метод       Endpoint        Описание        Auth
-POST        /api/links/shorten      Создать короткую ссылку     Опционально
-GET     /{short_code}       🔗 Редирект на оригинал     Нет
-GET     /api/links/{code}/stats     Статистика по ссылке        Опционально
-PUT     /api/links/{code}       Обновить ссылку     Да (владелец)
-DELETE      /api/links/{code}       Удалить ссылку      Да (владелец)
-GET     /api/links/my       Мои ссылки      Да
-GET     /api/links/search       Поиск по URL        Опционально
+
+| Метод | Endpoint | Описание | Требуется auth |
+|-------|----------|----------|----------------|
+| POST | `/api/links/shorten` | Создать короткую ссылку | Опционально |
+| GET | `/{short_code}` | 🔗 Редирект на оригинал | ❌ Нет |
+| GET | `/api/links/{code}/stats` | Статистика по ссылке | Опционально |
+| PUT | `/api/links/{code}` | Обновить ссылку | ✅ Да (владелец) |
+| DELETE | `/api/links/{code}` | Удалить ссылку | ✅ Да (владелец) |
+| GET | `/api/links/my` | Мои ссылки | ✅ Да |
+| GET | `/api/links/search` | Поиск по URL | Опционально |
 
 ## 🗄️ База данных
 ### Таблица users
