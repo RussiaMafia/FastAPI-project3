@@ -3,11 +3,10 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    # 🔧 Разрешаем лишние переменные из .env (чтобы не удалять POSTGRES_USER и др.)
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
-        extra="ignore",  # ← КЛЮЧЕВОЕ: игнорировать необъявленные поля
+        extra="ignore",
         case_sensitive=True
     )
     
@@ -29,7 +28,7 @@ class Settings(BaseSettings):
     # Cache settings
     CACHE_TTL: int = 3600  # 1 hour
     
-    # Base URL for generated links (обязательно укажи при деплое)
+    # Base URL for generated links
     BASE_URL: str = "http://localhost:8000"
 
 @lru_cache()
