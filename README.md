@@ -99,8 +99,11 @@ python -m http.server 3000
 # или используйте Live Server в VS Code
 ```
 ## Приложение доступно:
+
 API: http://localhost:8000
+
 Swagger документация: http://localhost:8000/docs
+
 Frontend: http://localhost:3000/frontend/index.html
 
 ## 🐳 Docker Compose
